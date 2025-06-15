@@ -37,6 +37,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
+
+      - name: Debug AWS identity
+        run: aws sts get-caller-identity
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
